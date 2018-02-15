@@ -12,6 +12,7 @@ class UserResource(ModelResource):
             'email', 'password',
             'is_active', 'is_staff', 'is_superuser'
         ]
+        allowed_methods = ['get']
 
 
 class EntryResource(ModelResource):
