@@ -1,5 +1,5 @@
-from tastypie.resource impor ModelResource
-from myapp.models impot Entry
+from tastypie.resources import ModelResource
+from blog_tastypie.myapp.models import Entry
 
 
 class EntryResource(ModelResource):
