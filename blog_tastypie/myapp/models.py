@@ -13,3 +13,10 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        # For automatic slug generation.
+        if not self.slug:
+            self.slug = slugify(self.title)[:50]
+
+        return super(Entry, self).save(*args, **kwargs)
