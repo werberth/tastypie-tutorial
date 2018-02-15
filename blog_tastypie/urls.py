@@ -1,11 +1,12 @@
 from django.conf.urls import url, include
 from tastypie.api import Api
-from blog_tastypie.myapp.api import EntryResource
+from blog_tastypie.myapp.api import EntryResource, UserResource
 
 v1_api = Api(api_name='v1')
-entry_resource = EntryResource()
+v1_api.register(EntryResource())
+v1_api.register(UserResource())
 
 urlpatterns = [
     url(r'^blog/', include('blog_tastypie.myapp.urls')),
-    url(r'^api/', include(entry_resource.urls)),
+    url(r'^api/', include(v1_api.urls)),
 ]
