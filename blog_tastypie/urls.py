@@ -1,6 +1,8 @@
 from django.conf.urls import url, include
+from tastypie.api import Api
 from blog_tastypie.myapp.api import EntryResource
 
+v1_api = Api(api_name='v1')
 entry_resource = EntryResource()
 
 urlpatterns = [
